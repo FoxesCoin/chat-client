@@ -6,7 +6,15 @@ import App from 'pages/app';
 
 import { store } from 'utils/store';
 
-const container = document.getElementById('root')!;
+import { GlobalStyle } from 'styles/global';
+import 'styles/reset.css';
+
+const container = document.getElementById('root');
+
+if (!container) {
+  throw new Error('Root component not found');
+}
+
 const root = createRoot(container);
 
 const Root = ({ children }: { children: ReactNode }) => {
@@ -20,6 +28,7 @@ const Root = ({ children }: { children: ReactNode }) => {
 root.render(
   <Root>
     <Provider store={store}>
+      <GlobalStyle />
       <App />
     </Provider>
   </Root>
