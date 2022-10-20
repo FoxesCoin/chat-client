@@ -1,9 +1,9 @@
-type ProjectTheme = 'light' | 'dark';
-type PrimaryColor = 'green' | 'light-blue' | 'purple' | 'pick' | 'gray';
+type ThemeName = 'light' | 'dark';
+type PrimaryColor = 'green' | 'light-blue' | 'purple' | 'pink' | 'gray';
 type UserStatus = 'active' | 'away' | 'disabled';
 
 interface UserTheme {
-  theme: ProjectTheme;
+  theme: ThemeName;
   primaryColor: PrimaryColor;
 }
 

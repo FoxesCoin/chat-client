@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import App from 'pages/app';
+import { ThemeContainer } from 'pages/theme-container';
 
 import { store } from 'utils/store';
 
@@ -28,8 +29,10 @@ const Root = ({ children }: { children: ReactNode }) => {
 root.render(
   <Root>
     <Provider store={store}>
-      <GlobalStyle />
-      <App />
+      <ThemeContainer>
+        <GlobalStyle />
+        <App />
+      </ThemeContainer>
     </Provider>
   </Root>
 );

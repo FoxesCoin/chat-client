@@ -11,6 +11,7 @@ html {
 }
 
 *, *::before, *::after {
+  box-sizing: border-box;
   font-family: inherit;
   font-size: inherit;
   color: inherit;

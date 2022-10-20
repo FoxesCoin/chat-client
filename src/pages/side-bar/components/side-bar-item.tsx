@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { COLORS } from 'styles/color';
 import { PC_MEDIA } from 'styles/media';
@@ -18,32 +18,31 @@ interface Props extends SideBarTemplate {
   children: ReactNode;
 }
 
-// TODO load theme color scheme
+const Wrapper = styled(SideBarIcon)<Styled>(
+  ({ theme, isActive }) => css`
+    position: relative;
 
-const Wrapper = styled(SideBarIcon)<Styled>`
-  position: relative;
+    &::after {
+      position: absolute;
+      width: 3px;
+      height: 1.5rem;
+      background-color: ${isActive ? theme.primaryColor : COLORS.transparent};
 
-  &::after {
-    position: absolute;
-    width: 3px;
-    height: 1.5rem;
-    background-color: ${(props) =>
-      props.isActive ? 'red' : COLORS.transparent};
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
 
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    content: none;
-    ${PC_MEDIA} {
-      content: '';
+      content: none;
+      ${PC_MEDIA} {
+        content: '';
+      }
     }
-  }
 
-  path {
-    fill: ${(props) => (props.isActive ? 'red' : COLORS.spanishGray)};
-  }
-`;
+    path {
+      fill: ${isActive ? theme.primaryColor : COLORS.spanishGray};
+    }
+  `
+);
 
 export const SideBarItem = (props: Props) => {
   const { isActive, onClick, children } = props;
