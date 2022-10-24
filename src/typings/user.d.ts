@@ -1,5 +1,5 @@
 type ThemeName = 'light' | 'dark';
-type PrimaryColor = 'green' | 'light-blue' | 'purple' | 'pink' | 'gray';
+type PrimaryColor = 'green' | 'light-blue' | 'purple' | 'pink';
 type UserStatus = 'active' | 'away' | 'disabled';
 
 interface UserTheme {

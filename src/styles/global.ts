@@ -1,13 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { COLORS } from './color';
 import { FONT_SIZES } from './font-size';
 import { PC_MEDIA } from './media';
 
 export const GlobalStyle = createGlobalStyle`
 html {
   font-size: ${FONT_SIZES.regular};
-  color: ${COLORS.black};
+  color: ${(props) => props.theme.text};
 }
 
 *, *::before, *::after {
@@ -20,7 +19,7 @@ html {
 #root {
   
   ${PC_MEDIA} {
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: min-content 300px 1fr;
   }
 }
 `;

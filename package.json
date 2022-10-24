@@ -37,7 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "postinstall": "husky install",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pretty": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [

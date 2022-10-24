@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import {
   cssFlexCenter,
   cssFullSize,
-  cssGap,
+  cssHorizontalGap,
   cssText,
+  cssVerticalGap,
   Typography,
 } from './theme.preset';
 
@@ -39,13 +40,13 @@ export const Theme = {
   `,
   GapRow: styled.div`
     ${showCursor}
-    ${cssGap}
+    ${cssHorizontalGap}
     display: flex;
     align-items: center;
   `,
   GapColumn: styled.div`
     ${showCursor}
-    ${cssGap}
+    ${cssVerticalGap}
     display: flex;
     justify-content: center;
     flex-direction: column;

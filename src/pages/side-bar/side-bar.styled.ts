@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { COLORS } from 'styles/color';
-import { PC_MEDIA } from 'styles/media';
+import { MOBILE_MEDIA, PC_MEDIA } from 'styles/media';
 
 import { cssSquare, Theme } from 'styles/theme';
 
@@ -15,24 +15,25 @@ export const SideBarIcon = styled(Theme.FlexCenter)`
   }
 
   path {
-    fill: ${COLORS.spanishGray};
+    fill: ${COLORS.silver};
   }
 `;
 
 export const SideBarStyled = {
   Wrapper: styled.aside`
-    background-color: ${COLORS.black};
-
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: ${COLORS.jet};
 
     display: flex;
-    justify-content: space-around;
+
+    ${MOBILE_MEDIA} {
+      bottom: 0;
+      width: 100%;
+      position: fixed;
+      justify-content: space-around;
+    }
 
     ${PC_MEDIA} {
       height: 100%;
-      width: unset;
       flex-direction: column;
       justify-content: space-between;
     }
@@ -41,17 +42,21 @@ export const SideBarStyled = {
     display: flex;
     gap: 1rem;
 
-    flex-grow: 5;
     justify-content: space-around;
 
+    ${MOBILE_MEDIA} {
+      flex-grow: 5;
+    }
+
     ${PC_MEDIA} {
-      flex-grow: unset;
       flex-direction: column;
     }
   `,
 
-  Setting: styled(SideBarIcon)`
-    flex-grow: 1;
+  Setting: styled(Theme.FlexCenter)`
+    ${MOBILE_MEDIA} {
+      flex-grow: 1;
+    }
 
     ${PC_MEDIA} {
       flex-grow: unset;

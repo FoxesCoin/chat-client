@@ -1,5 +1,4 @@
-import { SideBarItem } from './components';
-import { useSideBarState } from './side-bar.state';
+import { SideBarItem, SideBarTemplate } from './components';
 
 import { SideBarStyled as Styled } from './side-bar.styled';
 
@@ -10,8 +9,18 @@ import { ReactComponent as Phone } from 'assets/icons/side-bar/phone.svg';
 import { ReactComponent as ProfileIcon } from 'assets/icons/side-bar/profile.svg';
 import { ReactComponent as Setting } from 'assets/icons/side-bar/setting.svg';
 
-export const SideBar = () => {
-  const { createTemplateItem } = useSideBarState();
+interface Props {
+  page: ChatPage;
+  selectPage: (page: ChatPage) => () => void;
+}
+
+export const SideBar = (props: Props) => {
+  const { page, selectPage } = props;
+
+  const createTemplateItem = (template: ChatPage): SideBarTemplate => ({
+    isActive: template === page,
+    onClick: selectPage(template),
+  });
 
   return (
     <Styled.Wrapper>
@@ -33,7 +42,9 @@ export const SideBar = () => {
         </SideBarItem>
       </Styled.Navigation>
       <Styled.Setting>
-        <Setting />
+        <SideBarItem {...createTemplateItem('setting')}>
+          <Setting />
+        </SideBarItem>
       </Styled.Setting>
     </Styled.Wrapper>
   );

@@ -4,7 +4,7 @@ import { Color, COLORS } from 'styles/color';
 import { FontSize, FONT_SIZES } from 'styles/font-size';
 
 interface Flex {
-  gap?: number;
+  gap?: string;
 }
 
 export interface Typography {
@@ -12,8 +12,16 @@ export interface Typography {
   fontSize?: FontSize;
 }
 
-export const cssGap = css<Flex>`
-  gap: ${(props) => props.gap ?? 8}px;
+export const cssHorizontalGap = css<Flex>`
+  & > * + * {
+    margin-left: ${(props) => props.gap ?? '8px'};
+  }
+`;
+
+export const cssVerticalGap = css<Flex>`
+  & > * + * {
+    margin-top: ${(props) => props.gap ?? '8px'};
+  }
 `;
 
 export const cssText = css<Typography>(

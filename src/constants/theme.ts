@@ -4,34 +4,42 @@ import { PrimaryColorTheme, ThemeParameter } from 'typings';
 
 export const PRIMARY_COLOR_THEME: Record<PrimaryColor, PrimaryColorTheme> = {
   'light-blue': {
-    opacityPrimaryColor: COLORS.blue,
+    opacityPrimaryColor: COLORS.opacityBlue,
     primaryColor: COLORS.blue,
   },
-  gray: {
-    opacityPrimaryColor: COLORS.dimGray,
-    primaryColor: COLORS.dimGray,
-  },
   green: {
-    opacityPrimaryColor: COLORS.green,
+    opacityPrimaryColor: COLORS.opacityGreen,
     primaryColor: COLORS.green,
   },
   pink: {
-    opacityPrimaryColor: COLORS.red,
-    primaryColor: COLORS.red,
+    opacityPrimaryColor: COLORS.opacityPink,
+    primaryColor: COLORS.pink,
   },
   purple: {
-    opacityPrimaryColor: COLORS.lightBlue,
-    primaryColor: COLORS.lightBlue,
+    opacityPrimaryColor: COLORS.opacityPurple,
+    primaryColor: COLORS.purple,
   },
 };
 
 export const PROJECT_THEME: Record<ThemeName, ThemeParameter> = {
   dark: {
-    background: COLORS.black,
-    iconColor: COLORS.white,
+    background: COLORS.eerieBlack,
+    icon: COLORS.white,
+    text: COLORS.lightGray,
+
+    accordion: {
+      border: COLORS.jet,
+      active: COLORS.jet,
+    },
   },
   light: {
     background: COLORS.white,
-    iconColor: COLORS.black,
+    icon: COLORS.black,
+    text: COLORS.davysGrey,
+
+    accordion: {
+      active: COLORS.cultured,
+      border: COLORS.ghostWhite,
+    },
   },
 };

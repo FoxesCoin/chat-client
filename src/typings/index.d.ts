@@ -2,7 +2,13 @@ import 'styled-components';
 
 export interface ThemeParameter {
   background: string;
-  iconColor: string;
+  icon: string;
+  text: string;
+
+  accordion: {
+    border: string;
+    active: string;
+  };
 }
 
 export interface PrimaryColorTheme {

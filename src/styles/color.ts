@@ -2,46 +2,31 @@ export const COLORS = <const>{
   transparent: 'transparent',
 
   white: '#fff',
-  cultured: '#fcfafa',
+  ghostWhite: '#f0f0f5',
+  cultured: '#EFEFF2',
+
+  lightGray: '#ABB3BB',
 
   black: '#282828',
-
+  jet: '#2E2E2E',
+  eerieBlack: '#262626',
   onyx: '#3b3c3c',
-  onyxOpacity: 'rgba(59, 59, 60, 0.7)',
+  davysGrey: '#4B5259',
 
-  lightGray: '#c8d3d5',
-  spanishGray: '#999',
-  dimGray: '#656C6E',
+  gray: '#999',
+  silver: '#8F9198',
 
-  palePink: '#ffd6d6',
-  lightCoral: '#ff8585',
-  red: '#f00',
+  blue: '#50a5f1',
+  opacityBlue: '#64B3F8aa',
 
-  paleGreen: '#d6ffd6',
-  lightGreen: '#85ff85',
-  green: '#0f0',
-  darkGreen: '#090',
+  green: '#4eac6d',
+  opacityGreen: '#5DB67Aaa',
 
-  paleBlue: '#d6d6ff',
-  lightBlue: '#8585ff',
-  blue: '#00f',
+  purple: '#6153CC',
+  opacityPurple: '#8D80F1aa',
 
-  steelTeal: '#6e8387',
-
-  starCommandBlue: '#1378ab',
-  sapphireBlue: '#116a96',
-  charcoal: '#214354',
-
-  darkBlue: '#23238e',
-
-  backgroundBlue: '#030111',
-
-  paleYellow: '#fff992',
-  yellow: '#ffe600',
-
-  lightOrange: '#ffac8c',
-  orange: '#ff7a47',
-  orangeOpacity: 'rgba(255, 122, 71, 0.5)',
+  pink: '#EF476F',
+  opacityPink: '#F86889aa',
 };
 
 export type Color = keyof typeof COLORS;

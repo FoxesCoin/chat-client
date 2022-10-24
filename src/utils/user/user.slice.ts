@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchUser } from './user.thunk';
+import { UserThunk } from './user.thunk';
 
 interface UserRedux {
   isLoading: boolean;
@@ -19,6 +19,7 @@ export const DEFAULT_USER: User = {
   },
 };
 
+const { fetchUser, updateTheme } = UserThunk;
 const initialState: UserRedux = {
   error: null,
   isLoading: false,
@@ -38,6 +39,10 @@ export const UserSlice = createSlice({
       .addCase(fetchUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.user = payload;
+      })
+      .addCase(updateTheme.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user.theme = { ...state.user.theme, ...payload };
       })
       .addCase(fetchUser.rejected, (state) => {
         state.isLoading = false;

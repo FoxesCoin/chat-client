@@ -16,6 +16,8 @@ export interface SideBarTemplate extends Styled {
 
 interface Props extends SideBarTemplate {
   children: ReactNode;
+
+  className?: string;
 }
 
 const Wrapper = styled(SideBarIcon)<Styled>(
@@ -39,16 +41,16 @@ const Wrapper = styled(SideBarIcon)<Styled>(
     }
 
     path {
-      fill: ${isActive ? theme.primaryColor : COLORS.spanishGray};
+      fill: ${isActive ? theme.primaryColor : COLORS.silver};
     }
   `
 );
 
 export const SideBarItem = (props: Props) => {
-  const { isActive, onClick, children } = props;
+  const { isActive, children, className, onClick } = props;
 
   return (
-    <Wrapper isActive={isActive} onClick={onClick}>
+    <Wrapper isActive={isActive} className={className} onClick={onClick}>
       {children}
     </Wrapper>
   );
