@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import App from 'pages/app';
 import { ThemeContainer } from 'pages/theme-container';
 
-import { store } from 'utils/store';
+import { REDUX_STORE } from 'utils/store';
 
 import { GlobalStyle } from 'styles/global';
 import 'styles/reset.css';
@@ -28,7 +28,7 @@ const Root = ({ children }: { children: ReactNode }) => {
 
 root.render(
   <Root>
-    <Provider store={store}>
+    <Provider store={REDUX_STORE}>
       <ThemeContainer>
         <GlobalStyle />
         <App />
