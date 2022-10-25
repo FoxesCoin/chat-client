@@ -36,6 +36,16 @@ const DARK: ThemeParameter = {
     dot: COLORS.white,
     border: COLORS.white,
   },
+
+  chat: {
+    unreadCounter: COLORS.silver,
+  },
+
+  search: {
+    placeholder: COLORS.sonicSilver,
+    background: COLORS.jet,
+    icon: COLORS.lightGray,
+  },
 };
 
 const LIGHT: ThemeParameter = {
@@ -52,6 +62,17 @@ const LIGHT: ThemeParameter = {
     border: COLORS.silver,
     background: COLORS.ghostWhite,
     dot: COLORS.silver,
+  },
+
+  chat: {
+    unreadCounter: COLORS.onyx,
+  },
+
+  // TODO correct color for light theme
+  search: {
+    placeholder: COLORS.sonicSilver,
+    background: COLORS.silver,
+    icon: COLORS.lightGray,
   },
 };
 

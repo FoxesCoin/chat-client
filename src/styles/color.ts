@@ -15,6 +15,7 @@ export const COLORS = <const>{
 
   gray: '#999',
   silver: '#8F9198',
+  sonicSilver: '#757575',
 
   blue: '#50a5f1',
   opacityBlue: '#64B3F8aa',

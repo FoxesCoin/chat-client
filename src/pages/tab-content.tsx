@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import styled from 'styled-components';
 
+import { ChatTab } from './chat-tab';
 import { SettingTab } from './setting-tab';
 
 interface Props {
@@ -15,6 +16,8 @@ const selectPage = (page: ChatPage): ReactElement | null => {
   switch (page) {
     case 'setting':
       return <SettingTab />;
+    case 'chat':
+      return <ChatTab />;
 
     default:
       return null;

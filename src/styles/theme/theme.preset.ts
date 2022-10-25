@@ -1,15 +1,14 @@
 import { css } from 'styled-components';
 
-import { Color, COLORS } from 'styles/color';
-import { FontSize, FONT_SIZES } from 'styles/font-size';
+import { FontSize, FontWeight, FONT_SIZES, FONT_WEIGHT } from 'styles/font';
 
 export interface Flex {
   gap?: string;
 }
 
 export interface Typography {
-  color?: Color;
   fontSize?: FontSize;
+  fontWeight?: FontWeight;
 }
 
 export const cssHorizontalGap = (gap?: string) => css`
@@ -25,9 +24,9 @@ export const cssVerticalGap = (gap?: string) => css`
 `;
 
 export const cssText = css<Typography>(
-  ({ color, fontSize }) => `
-  ${color ? `color: ${COLORS[color]};` : ''}
+  ({ fontSize, fontWeight }) => `
   ${fontSize ? `font-size: ${FONT_SIZES[fontSize]};` : ''}
+  ${fontWeight ? `font-weight: ${FONT_WEIGHT[fontWeight]};` : ''}
   `
 );
 

@@ -15,6 +15,16 @@ export interface ThemeParameter {
     dot: string;
     background: string;
   };
+
+  chat: {
+    unreadCounter: string;
+  };
+
+  search: {
+    placeholder: string;
+    background: string;
+    icon: string;
+  };
 }
 
 export interface PrimaryColorTheme {
