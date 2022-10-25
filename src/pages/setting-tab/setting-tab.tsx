@@ -8,30 +8,28 @@ import { useSettingTabState } from './setting-tab.state';
 
 import { PRIMARY_COLOR_THEME } from 'constants/theme';
 
-import { Theme } from 'styles/theme';
+import { Switch } from 'components/switch';
+import { cssVerticalGap, Theme } from 'styles/theme';
 
 const Content = styled(Accordion.Content)`
-  & > * + * {
-    margin-top: 1.5rem;
-  }
+  ${cssVerticalGap('1.5rem')}
 `;
 const ColorList = styled(Theme.GapRow)`
   justify-content: center;
 `;
 
 export const SettingTab = () => {
-  const { changeTheme, changePrimaryColor, primaryColor } =
+  const { switchTheme, changePrimaryColor, primaryColor, theme } =
     useSettingTabState();
 
   return (
     <Accordion>
       <Accordion.Header>Theme</Accordion.Header>
       <Content>
-        <Theme.GapColumn>
-          <Theme.Paragraph>Theme</Theme.Paragraph>
-          <button onClick={changeTheme('light')}>Light</button>
-          <button onClick={changeTheme('dark')}>Dark</button>
-        </Theme.GapColumn>
+        <Theme.FlexLine>
+          <Theme.Paragraph>Light theme</Theme.Paragraph>
+          <Switch isActive={theme === 'light'} onClick={switchTheme} />
+        </Theme.FlexLine>
         <Theme.GapColumn>
           <Theme.Paragraph>Primary color</Theme.Paragraph>
           <ColorList gap="1rem">

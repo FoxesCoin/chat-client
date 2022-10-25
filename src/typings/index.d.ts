@@ -9,6 +9,12 @@ export interface ThemeParameter {
     border: string;
     active: string;
   };
+
+  switch: {
+    border: string;
+    dot: string;
+    background: string;
+  };
 }
 
 export interface PrimaryColorTheme {

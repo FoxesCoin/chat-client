@@ -7,10 +7,10 @@ export const useSettingTabState = () => {
   );
   const updateUser = useActionDispatch(UserThunk.updateTheme);
 
-  const changeTheme = (newTheme: ThemeName) => () =>
-    updateUser({ theme: newTheme });
+  const switchTheme = () =>
+    updateUser({ theme: theme === 'light' ? 'dark' : 'light' });
   const changePrimaryColor = (newPrimaryColor: PrimaryColor) => () =>
     updateUser({ primaryColor: newPrimaryColor });
 
-  return { primaryColor, theme, changeTheme, changePrimaryColor };
+  return { primaryColor, theme, switchTheme, changePrimaryColor };
 };

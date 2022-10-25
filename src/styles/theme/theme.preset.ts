@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 import { Color, COLORS } from 'styles/color';
 import { FontSize, FONT_SIZES } from 'styles/font-size';
 
-interface Flex {
+export interface Flex {
   gap?: string;
 }
 
@@ -12,15 +12,15 @@ export interface Typography {
   fontSize?: FontSize;
 }
 
-export const cssHorizontalGap = css<Flex>`
+export const cssHorizontalGap = (gap?: string) => css`
   & > * + * {
-    margin-left: ${(props) => props.gap ?? '8px'};
+    margin-left: ${gap ?? '8px'};
   }
 `;
 
-export const cssVerticalGap = css<Flex>`
+export const cssVerticalGap = (gap?: string) => css`
   & > * + * {
-    margin-top: ${(props) => props.gap ?? '8px'};
+    margin-top: ${gap ?? '8px'};
   }
 `;
 

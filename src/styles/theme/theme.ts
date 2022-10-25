@@ -6,6 +6,7 @@ import {
   cssHorizontalGap,
   cssText,
   cssVerticalGap,
+  Flex,
   Typography,
 } from './theme.preset';
 
@@ -38,15 +39,15 @@ export const Theme = {
     justify-content: space-between;
     flex-direction: column;
   `,
-  GapRow: styled.div`
+  GapRow: styled.div<Flex>`
     ${showCursor}
-    ${cssHorizontalGap}
+    ${(props) => cssHorizontalGap(props?.gap)}
     display: flex;
     align-items: center;
   `,
-  GapColumn: styled.div`
+  GapColumn: styled.div<Flex>`
     ${showCursor}
-    ${cssVerticalGap}
+    ${(props) => cssVerticalGap(props?.gap)}
     display: flex;
     justify-content: center;
     flex-direction: column;

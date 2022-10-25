@@ -21,25 +21,41 @@ export const PRIMARY_COLOR_THEME: Record<PrimaryColor, PrimaryColorTheme> = {
   },
 };
 
+const DARK: ThemeParameter = {
+  background: COLORS.eerieBlack,
+  icon: COLORS.white,
+  text: COLORS.lightGray,
+
+  accordion: {
+    border: COLORS.jet,
+    active: COLORS.jet,
+  },
+
+  switch: {
+    background: COLORS.jet,
+    dot: COLORS.white,
+    border: COLORS.white,
+  },
+};
+
+const LIGHT: ThemeParameter = {
+  background: COLORS.white,
+  icon: COLORS.black,
+  text: COLORS.davysGrey,
+
+  accordion: {
+    active: COLORS.cultured,
+    border: COLORS.ghostWhite,
+  },
+
+  switch: {
+    border: COLORS.silver,
+    background: COLORS.ghostWhite,
+    dot: COLORS.silver,
+  },
+};
+
 export const PROJECT_THEME: Record<ThemeName, ThemeParameter> = {
-  dark: {
-    background: COLORS.eerieBlack,
-    icon: COLORS.white,
-    text: COLORS.lightGray,
-
-    accordion: {
-      border: COLORS.jet,
-      active: COLORS.jet,
-    },
-  },
-  light: {
-    background: COLORS.white,
-    icon: COLORS.black,
-    text: COLORS.davysGrey,
-
-    accordion: {
-      active: COLORS.cultured,
-      border: COLORS.ghostWhite,
-    },
-  },
+  dark: DARK,
+  light: LIGHT,
 };
