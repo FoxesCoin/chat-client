@@ -43,6 +43,23 @@ export const cssFlexCenter = css`
   align-items: center;
 `;
 
+export const cssVerticalCentralize = css`
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+export const cssHideScrollbar = css`
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+`;
+
 export const cssSquare = (size: string) => css`
   width: ${size};
   height: ${size};

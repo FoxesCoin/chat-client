@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { COLORS } from 'styles/color';
 import { FONT_SIZES, FONT_WEIGHT } from 'styles/font';
 
-import { cssVerticalGap, Theme } from 'styles/theme';
+import { cssHideScrollbar, cssVerticalGap, Theme } from 'styles/theme';
 import { addAlphaToHEX } from 'utils/color';
 
 interface WrapperStyling {
@@ -31,15 +31,18 @@ export const ChatItemWrapper = styled(Theme.FlexLine)<WrapperStyling>(
 );
 
 export const ChatTabStyled = {
-  TopBar: styled.div`
-    padding: 1rem 1.5rem 0;
-    ${cssVerticalGap('1rem')}
-  `,
   Wrapper: styled.div`
     height: 100%;
-    ${cssVerticalGap('1rem')}
     padding-bottom: 2rem;
     position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+  `,
+  TopBar: styled.div`
+    padding: 1rem 1.5rem 0;
+    margin-bottom: 1rem;
+    ${cssVerticalGap('1rem')}
   `,
   Archived: styled.button`
     position: absolute;
@@ -52,5 +55,10 @@ export const ChatTabStyled = {
     font-weight: ${FONT_WEIGHT.medium};
     width: max-content;
     padding: 0.25rem 0.5rem;
+  `,
+  ChatList: styled.div`
+    overflow-y: auto;
+    ${cssHideScrollbar}
+    ${cssVerticalGap('1rem')}
   `,
 };

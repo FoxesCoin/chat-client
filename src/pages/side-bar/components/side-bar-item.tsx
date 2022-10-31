@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 import { COLORS } from 'styles/color';
 import { PC_MEDIA } from 'styles/media';
 
+import { cssVerticalCentralize } from 'styles/theme';
+
 import { SideBarIcon } from '../side-bar.styled';
 
 interface Styled {
@@ -31,8 +33,7 @@ const Wrapper = styled(SideBarIcon)<Styled>(
       background-color: ${isActive ? theme.primaryColor : COLORS.transparent};
 
       right: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      ${cssVerticalCentralize}
 
       content: none;
       ${PC_MEDIA} {

@@ -1,7 +1,11 @@
-import { useClickEvent } from 'hooks/event';
 import styled, { css } from 'styled-components';
+
+import { useClickEvent } from 'hooks/event';
+
 import { COLORS } from 'styles/color';
-import { cssRound } from 'styles/theme';
+
+import { cssRound, cssVerticalCentralize } from 'styles/theme';
+
 import { RElement } from 'typings/react';
 
 interface Props {
@@ -29,8 +33,7 @@ const Wrapper = styled.div<{ isActive: boolean }>(
       content: '';
       display: block;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      ${cssVerticalCentralize}
       transition: all 0.2s ease-in-out;
       background-color: ${isActive ? COLORS.white : theme.switch.dot};
       left: ${isActive ? 24 : 4}px;
