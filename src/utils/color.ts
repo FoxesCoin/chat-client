@@ -12,7 +12,7 @@ const parseHEXtoRGB = (color: string) => {
     }
     case base.length === 6:
     case base.length === 8: {
-      rgb = Array.from(base.matchAll(/\d\d/g)).flat();
+      rgb = Array.from(base.matchAll(/\w\w/g)).flat();
       break;
     }
     default:

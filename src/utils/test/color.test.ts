@@ -4,6 +4,7 @@ it('Correct HEX', () => {
   expect(addAlphaToHEX('#223322', 1)).toBe('rgba(34, 51, 34, 1)');
   expect(addAlphaToHEX('#222', 0.16)).toBe('rgba(34, 34, 34, 0.16)');
   expect(addAlphaToHEX('#443322', 1)).toBe('rgba(68, 51, 34, 1)');
+  expect(addAlphaToHEX('#3b3c3c', 1)).toBe('rgba(59, 60, 60, 1)');
 });
 
 it('Alpha too large', () => {
