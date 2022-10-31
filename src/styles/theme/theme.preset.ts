@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 import { FontSize, FontWeight, FONT_SIZES, FONT_WEIGHT } from 'styles/font';
 
-export interface Flex {
+export interface GapStyling {
   gap?: string;
 }
 
@@ -41,27 +41,6 @@ export const cssFlexCenter = css`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const cssFullSize = css`
-  min-height: 100%;
-  width: 100%;
-`;
-
-export const cssFullSizeAbsolute = css`
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: absolute;
-`;
-
-export const cssFullScreenFixed = css`
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: fixed;
 `;
 
 export const cssSquare = (size: string) => css`

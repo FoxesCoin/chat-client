@@ -10,8 +10,24 @@ html {
   color: ${(props) => props.theme.text};
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+body,
+html,
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root {
+  display: grid;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;  
+  min-width: 0;
+  min-height: 0;
+}
+
+* { 
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;

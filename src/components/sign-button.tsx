@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { COLORS } from 'styles/color';
 
 import { cssSquare } from 'styles/theme';
+import { addAlphaToHEX } from 'utils/color';
 
 import { RElement } from 'typings/react';
 
@@ -13,7 +14,7 @@ interface Props {
 }
 
 const Button = styled.button`
-  background-color: ${COLORS.green}22;
+  background-color: ${addAlphaToHEX(COLORS.green, 0.16)};
   ${cssSquare('2rem')}
   border-radius: 0.25rem;
   transition: all 0.2s ease-in-out;

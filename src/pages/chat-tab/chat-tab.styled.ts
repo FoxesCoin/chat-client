@@ -4,6 +4,7 @@ import { COLORS } from 'styles/color';
 import { FONT_SIZES, FONT_WEIGHT } from 'styles/font';
 
 import { cssVerticalGap, Theme } from 'styles/theme';
+import { addAlphaToHEX } from 'utils/color';
 
 interface WrapperStyling {
   isActive: boolean;
@@ -15,9 +16,8 @@ export const UnreadMessage = styled.span(
     font-weight: 500;
     padding: 0.25rem;
     border-radius: 0.25rem;
-    background-color: red;
     color: ${theme.chat.unreadCounter};
-    background-color: ${theme.chat.unreadCounter}22;
+    background-color: ${addAlphaToHEX(theme.chat.unreadCounter, 0.16)};
   `
 );
 
