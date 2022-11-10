@@ -8,17 +8,7 @@ html {
   font-size: ${FONT_SIZES.regular};
   font-weight: ${FONT_WEIGHT.regular};
   color: ${(props) => props.theme.text};
-}
-
-body,
-html,
-#root {
-  height: 100vh;
-  width: 100%;
-}
-
-#root {
-  display: grid;
+  font-family: 'Rubik', sans-serif;    
 }
 
 *, ::before, ::after {
@@ -34,10 +24,30 @@ html,
   color: inherit;
 }
 
+body,
+html,
 #root {
+  height: 100vh;
+  width: 100%;
+}
+
+#modal {
+  position: relative;
+  z-index: 5;
+}
+
+// If we have open modal block scroll in #root
+#modal:not(:empty) ~ #root {
+  overflow: hidden;
+}
+
+
+
+#root {
+  display: grid;
   
   ${PC_MEDIA} {
-    grid-template-columns: min-content 300px 1fr;
+    grid-template-columns: min-content 1fr;
   }
 }
 `;

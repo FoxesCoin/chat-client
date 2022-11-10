@@ -26,9 +26,10 @@ export const SideBarStyled = {
     display: flex;
 
     ${MOBILE_MEDIA} {
+      position: fixed;
       bottom: 0;
       width: 100%;
-      position: fixed;
+      height: 3.5rem;
       justify-content: space-around;
     }
 

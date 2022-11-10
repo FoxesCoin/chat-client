@@ -1,4 +1,5 @@
 interface State {
+  id: number;
   logo: string | null;
   name: string;
   status: UserStatus;
@@ -6,14 +7,11 @@ interface State {
   isActive: boolean;
 }
 
-export const useAccountItemState = (id: number): State => {
-  console.log('Loading account', id);
-
-  return {
-    logo: null,
-    isActive: false,
-    name: 'Test',
-    status: 'active',
-    unreadMessage: 8,
-  };
-};
+export const useAccountItemState = (id: number): State => ({
+  id,
+  logo: null,
+  isActive: false,
+  name: 'Test',
+  status: 'active',
+  unreadMessage: 8,
+});

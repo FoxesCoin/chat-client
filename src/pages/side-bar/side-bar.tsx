@@ -1,5 +1,8 @@
 import { SideBarItem, SideBarTemplate } from './components';
 
+import { useActionDispatch, useAppSelector } from 'hooks/redux';
+import { AppActions } from 'utils/app';
+
 import { SideBarStyled as Styled } from './side-bar.styled';
 
 import { ReactComponent as Bookmark } from 'assets/icons/side-bar/bookmark.svg';
@@ -9,17 +12,13 @@ import { ReactComponent as Phone } from 'assets/icons/side-bar/phone.svg';
 import { ReactComponent as ProfileIcon } from 'assets/icons/side-bar/profile.svg';
 import { ReactComponent as Setting } from 'assets/icons/side-bar/setting.svg';
 
-interface Props {
-  page: ChatPage;
-  selectPage: (page: ChatPage) => () => void;
-}
-
-export const SideBar = (props: Props) => {
-  const { page, selectPage } = props;
+export const SideBar = () => {
+  const page = useAppSelector((redux) => redux.app.page);
+  const selectPage = useActionDispatch(AppActions.selectPage);
 
   const createTemplateItem = (template: ChatPage): SideBarTemplate => ({
     isActive: template === page,
-    onClick: selectPage(template),
+    onClick: () => selectPage(template),
   });
 
   return (

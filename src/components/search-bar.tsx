@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { useChangeEvent } from 'hooks/event';
+import { useDebounceChangeEvent } from 'hooks/event';
 
 import { RElement } from 'typings/react';
 
@@ -9,8 +9,6 @@ import { FONT_SIZES } from 'styles/font';
 import { cssSquare } from 'styles/theme';
 
 interface Props {
-  value: string;
-
   onChange: (value: string) => void;
 }
 
@@ -37,38 +35,28 @@ const Input = styled.input(
   `
 );
 
-const Icon = styled.div(
-  ({ theme }) => css`
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
-    right: 1rem;
+const Icon = styled(Search)`
+  position: absolute;
+  top: 50%;
+  transform: translate(50%, -50%);
+  right: 1rem;
 
-    svg {
-      ${cssSquare('1rem')}
+  ${cssSquare('1rem')}
 
-      path {
-        fill: ${theme.search.icon};
-      }
-    }
-  `
-);
+  path {
+    fill: ${(props) => props.theme.search.icon};
+  }
+`;
 
 export const SearchBar: RElement<Props> = (props) => {
-  const { className, value, onChange } = props;
+  const { className, onChange } = props;
 
-  const handleChange = useChangeEvent(onChange);
+  const handleChange = useDebounceChangeEvent(onChange);
 
   return (
     <Wrapper className={className}>
-      <Input
-        onChange={handleChange}
-        value={value}
-        placeholder="Search here.."
-      />
-      <Icon>
-        <Search />
-      </Icon>
+      <Input placeholder="Search here.." onChange={handleChange} />
+      <Icon />
     </Wrapper>
   );
 };

@@ -5,7 +5,7 @@ export const COLORS = <const>{
   ghostWhite: '#f0f0f5',
   cultured: '#EFEFF2',
 
-  lightGray: '#ABB3BB',
+  lightGray: '#ADB5BD',
 
   black: '#282828',
   jet: '#2E2E2E',

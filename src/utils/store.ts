@@ -1,9 +1,9 @@
-import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-
-import { UserReducer } from './user';
-
-import { combineReducers } from '@reduxjs/toolkit';
-
+import {
+  Action,
+  combineReducers,
+  configureStore,
+  ThunkAction,
+} from '@reduxjs/toolkit';
 import {
   FLUSH,
   PAUSE,
@@ -16,8 +16,12 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import { AppReducer } from './app';
+import { UserReducer } from './user';
+
 const rootReducer = combineReducers({
   user: UserReducer,
+  app: AppReducer,
 });
 
 const persistConfig = {
@@ -29,6 +33,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const REDUX_STORE = configureStore({
+  devTools: process.env.NODE_ENV === 'development',
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

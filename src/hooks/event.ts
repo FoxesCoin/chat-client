@@ -1,7 +1,9 @@
+import debounce from 'lodash.debounce';
 import {
   ChangeEvent,
   MouseEvent,
   useCallback,
+  useEffect,
   useLayoutEffect,
   useRef,
 } from 'react';
@@ -39,3 +41,19 @@ export const useChangeEvent = (onChange: (value: string) => void) =>
     const value = event.target.value;
     onChange(value);
   });
+
+export const useDebounceChangeEvent = (onChange: (value: string) => void) => {
+  const handleChange = (event: ChangeEvent<any>) => {
+    onChange(event.target.value);
+  };
+
+  const debounceChange = debounce(handleChange, 300);
+
+  useEffect(() => {
+    return () => {
+      debounceChange.cancel();
+    };
+  });
+
+  return debounceChange;
+};

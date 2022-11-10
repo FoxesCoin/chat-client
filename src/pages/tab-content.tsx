@@ -4,12 +4,16 @@ import styled from 'styled-components';
 import { ChatTab } from './chat-tab';
 import { SettingTab } from './setting-tab';
 
-interface Props {
-  page: ChatPage;
-}
+import { useAppSelector } from 'hooks/redux';
+
+import { PC_MEDIA } from 'styles/media';
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.background};
+
+  ${PC_MEDIA} {
+    width: 300px;
+  }
 `;
 
 const selectPage = (page: ChatPage): ReactElement | null => {
@@ -24,8 +28,8 @@ const selectPage = (page: ChatPage): ReactElement | null => {
   }
 };
 
-export const TabContent = (props: Props) => {
-  const { page } = props;
+export const TabContent = () => {
+  const page = useAppSelector((redux) => redux.app.page);
 
   return <Wrapper>{selectPage(page)}</Wrapper>;
 };

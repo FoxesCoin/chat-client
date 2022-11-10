@@ -4,11 +4,23 @@ import { AccountItem, ChatGroup, GroupItem } from './components';
 
 import { useChatTabState } from './chat-tab.state';
 
+import { ContactModal } from 'components/contact-modal';
 import { Theme } from 'styles/theme';
 import { ChatTabStyled as Styled } from './chat-tab.styled';
 
 export const ChatTab = () => {
-  const { favorite, account, channel, search, setSearch } = useChatTabState();
+  const {
+    favorite,
+    account,
+    channel,
+    isOpenContacts,
+    searchConnection,
+    addNewContact,
+    addContact,
+    addGroup,
+    openContacts,
+    closeContacts,
+  } = useChatTabState();
 
   return (
     <Styled.Wrapper>
@@ -17,10 +29,9 @@ export const ChatTab = () => {
           <Theme.Text fontSize="h3" fontWeight="medium">
             Chats
           </Theme.Text>
-          {/* TODO add correct function for this button */}
-          <SignButton onClick={() => console.log('Sign')} />
+          <SignButton onClick={addNewContact} />
         </Theme.FlexLine>
-        <SearchBar value={search} onChange={setSearch} />
+        <SearchBar onChange={searchConnection} />
       </Styled.TopBar>
 
       <Styled.ChatList>
@@ -29,17 +40,12 @@ export const ChatTab = () => {
             <AccountItem key={id} id={id} />
           ))}
         </ChatGroup>
-        {/* TODO add correct function for this button */}
-        <ChatGroup
-          title="Direct messages"
-          onClickSign={() => console.log('Sign')}
-        >
+        <ChatGroup title="Direct messages" onClickSign={openContacts}>
           {account.map((id) => (
             <AccountItem key={id} id={id} />
           ))}
         </ChatGroup>
-        {/* TODO add correct function for this button */}
-        <ChatGroup title="Groups" onClickSign={() => console.log('Sign')}>
+        <ChatGroup title="Groups" onClickSign={addGroup}>
           {channel.map((id) => (
             <GroupItem key={id} id={id} />
           ))}
@@ -47,6 +53,11 @@ export const ChatTab = () => {
       </Styled.ChatList>
       {/* TODO add redirect to archived contacts */}
       <Styled.Archived>Archived Contacts</Styled.Archived>
+      <ContactModal
+        isOpen={isOpenContacts}
+        onConfirm={addContact}
+        onClose={closeContacts}
+      />
     </Styled.Wrapper>
   );
 };
