@@ -14,6 +14,10 @@ export const ContactModalStyled = {
     ${PC_MEDIA} {
       height: 400px;
     }
+
+    & :last-child {
+      margin-bottom: 0.5rem;
+    }
   `,
 
   SearchInput: styled(SearchBar)`

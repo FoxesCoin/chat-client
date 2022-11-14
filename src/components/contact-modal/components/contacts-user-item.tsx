@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 
+import { addAlphaToHEX } from 'utils/color';
+
 import { COLORS } from 'styles/color';
 
 import { RElement } from 'typings/react';
-import { addAlphaToHEX } from 'utils/color';
 
 interface Styled {
   isActive: boolean;
@@ -17,7 +18,7 @@ interface Props extends Styled {
 
 const Wrapper = styled.li<Styled>(
   ({ theme, isActive }) => css`
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
     cursor: pointer;
     background-color: ${isActive
       ? addAlphaToHEX(theme.primaryColor, 0.16)

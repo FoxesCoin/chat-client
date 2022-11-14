@@ -110,9 +110,7 @@ export const ModalPageStyled = {
     border-top: 1px solid ${({ theme }) => theme.text};
     padding: 1rem;
   `,
-  Content: styled.div`
-    padding: 1rem;
-  `,
+
   CloseButton: styled.button(
     ({ theme }) => css`
       ${cssSquare('1.5rem')}

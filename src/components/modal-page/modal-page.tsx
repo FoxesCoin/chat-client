@@ -49,7 +49,7 @@ export const ModalPage: RWrapper<Props> = (props) => {
             <Close />
           </Styled.CloseButton>
         </Styled.TopBar>
-        <Styled.Content className={className}>{children}</Styled.Content>
+        <div className={className}>{children}</div>
         <Styled.Footer>
           <Button isDisabled={isDisabledConfirm} onClick={handleConfirm}>
             Confirm
