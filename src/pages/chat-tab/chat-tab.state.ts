@@ -1,5 +1,9 @@
 import { useShowState } from 'hooks/show';
 
+const MOCKED_FAVORITE = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const MOCKED_ACCOUNT = [1, 2, 3, 4, 5];
+const MOCKED_CHANNEL = [1, 2, 3, 4, 5];
+
 export const useChatTabState = () => {
   const {
     isShow: isOpenContacts,
@@ -7,8 +11,7 @@ export const useChatTabState = () => {
     hide: closeContacts,
   } = useShowState(false);
 
-  const searchConnection = (search: string) => {
-    console.log(search);
+  const searchConnection = (/*search: string*/) => {
     return;
   };
 
@@ -18,9 +21,8 @@ export const useChatTabState = () => {
   };
 
   //TODO add correct function for this button
-  const addContact = (user: User) => {
+  const addContact = (/*user: User*/) => {
     closeContacts();
-    console.log(user);
   };
 
   //TODO add correct function for this button
@@ -29,9 +31,9 @@ export const useChatTabState = () => {
   };
 
   return {
-    favorite: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    account: [1, 2, 3, 4, 5],
-    channel: [1, 2, 3, 4, 5],
+    favorite: MOCKED_FAVORITE,
+    account: MOCKED_ACCOUNT,
+    channel: MOCKED_CHANNEL,
     isOpenContacts,
     searchConnection,
     addNewContact,
