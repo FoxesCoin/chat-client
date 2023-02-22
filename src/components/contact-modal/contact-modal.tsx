@@ -1,12 +1,9 @@
+import { RElement } from 'typings/react';
+import { getObjectEntries } from 'utils/object';
 import { ModalPage } from '../modal-page';
 import { ContactsLetterGroup, ContactsUserItem } from './components';
-
-import { getObjectEntries } from 'utils/object';
 import { useContactModalState } from './contact-modal.state';
-
 import { ContactModalStyled as Styled } from './contact-modal.styled';
-
-import { RElement } from 'typings/react';
 
 interface Props {
   isOpen: boolean;
@@ -15,8 +12,11 @@ interface Props {
   onConfirm: (user: User) => void;
 }
 
-export const ContactModal: RElement<Props> = (props) => {
-  const { isOpen, onClose, onConfirm } = props;
+export const ContactModal = ({
+  isOpen,
+  onClose,
+  onConfirm,
+}: RElement<Props>) => {
   const { selectedUser, alphabetUsers, searchUser, selectUser } =
     useContactModalState();
 

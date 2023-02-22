@@ -15,7 +15,6 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-
 import { AppReducer } from './app';
 import { UserReducer } from './user';
 

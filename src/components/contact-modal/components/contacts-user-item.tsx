@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
-
-import { addAlphaToHEX } from 'utils/color';
-
 import { COLORS } from 'styles/color';
-
 import { RElement } from 'typings/react';
+import { addAlphaToHEX } from 'utils/color';
 
 interface Styled {
   isActive: boolean;
@@ -31,12 +28,13 @@ const Wrapper = styled.li<Styled>(
   `
 );
 
-export const ContactsUserItem: RElement<Props> = (props) => {
-  const { className, name, isActive, onClick } = props;
-
-  return (
-    <Wrapper isActive={isActive} className={className} onClick={onClick}>
-      {name}
-    </Wrapper>
-  );
-};
+export const ContactsUserItem = ({
+  className,
+  name,
+  isActive,
+  onClick,
+}: RElement<Props>) => (
+  <Wrapper isActive={isActive} className={className} onClick={onClick}>
+    {name}
+  </Wrapper>
+);

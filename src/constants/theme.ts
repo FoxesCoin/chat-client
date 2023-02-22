@@ -1,5 +1,4 @@
 import { COLORS } from 'styles/color';
-
 import { PrimaryColorTheme, ThemeParameter } from 'typings';
 
 export const PRIMARY_COLOR_THEME: Record<PrimaryColor, PrimaryColorTheme> = {

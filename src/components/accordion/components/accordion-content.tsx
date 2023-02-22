@@ -1,9 +1,7 @@
-import styled from 'styled-components';
-
 import { useAutoHeightAnimation } from 'hooks/animate';
-import { useAccordionState } from '../accordion.context';
-
+import styled from 'styled-components';
 import { RWrapper } from 'typings/react';
+import { useAccordionState } from '../accordion.context';
 
 const Wrapper = styled.div<{ height: number }>`
   overflow: hidden;
@@ -15,9 +13,7 @@ const Content = styled.div`
   padding: 1.25rem;
 `;
 
-export const AccordionContent: RWrapper = (props) => {
-  const { className, children } = props;
-
+export const AccordionContent = ({ className, children }: RWrapper) => {
   const isOpen = useAccordionState();
   const [ref, height] = useAutoHeightAnimation<HTMLDivElement>(isOpen);
 

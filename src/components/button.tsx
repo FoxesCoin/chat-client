@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
-
 import { COLORS } from 'styles/color';
 import { FONT_SIZES } from 'styles/font';
-
 import { RWrapper } from 'typings/react';
 import { addAlphaToHEX } from 'utils/color';
 
@@ -26,12 +24,13 @@ const ButtonStyled = styled.button(
   `
 );
 
-export const Button: RWrapper<Props> = (props) => {
-  const { className, onClick, children, isDisabled } = props;
-
-  return (
-    <ButtonStyled className={className} onClick={onClick} disabled={isDisabled}>
-      {children}
-    </ButtonStyled>
-  );
-};
+export const Button = ({
+  children,
+  className,
+  isDisabled,
+  onClick,
+}: RWrapper<Props>) => (
+  <ButtonStyled className={className} onClick={onClick} disabled={isDisabled}>
+    {children}
+  </ButtonStyled>
+);

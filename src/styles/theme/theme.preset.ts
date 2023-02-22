@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-
 import { FontSize, FontWeight, FONT_SIZES, FONT_WEIGHT } from 'styles/font';
 
 export interface GapStyling {

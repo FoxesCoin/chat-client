@@ -1,11 +1,8 @@
-import styled from 'styled-components';
-
 import { TabContent } from 'pages/tab-content';
-import { SideBar } from '../side-bar';
-
-import { useAppState } from './app.state';
-
+import styled from 'styled-components';
 import { MOBILE_MEDIA, PC_MEDIA } from 'styles/media';
+import { SideBar } from '../side-bar';
+import { useAppState } from './app.state';
 
 const Wrapper = styled.main`
   display: grid;

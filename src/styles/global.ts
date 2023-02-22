@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-
 import { FONT_SIZES, FONT_WEIGHT } from './font';
 import { PC_MEDIA } from './media';
 

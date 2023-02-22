@@ -1,12 +1,9 @@
+import { Selectors, useAppSelector } from 'hooks/redux';
 import { ReactElement } from 'react';
 import styled from 'styled-components';
-
+import { PC_MEDIA } from 'styles/media';
 import { ChatTab } from './chat-tab';
 import { SettingTab } from './setting-tab';
-
-import { Selectors, useAppSelector } from 'hooks/redux';
-
-import { PC_MEDIA } from 'styles/media';
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.background};

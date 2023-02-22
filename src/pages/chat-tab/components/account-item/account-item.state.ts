@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 interface State {
   id: number;
   logo: string | null;
@@ -7,11 +9,17 @@ interface State {
   isActive: boolean;
 }
 
-export const useAccountItemState = (id: number): State => ({
-  id,
-  logo: null,
-  isActive: false,
-  name: 'Test',
-  status: 'active',
-  unreadMessage: 8,
-});
+export const useAccountItemState = (id: number): State => {
+  const memo = useMemo<State>(
+    () => ({
+      id,
+      logo: null,
+      isActive: false,
+      name: 'Test',
+      status: 'active',
+      unreadMessage: 8,
+    }),
+    []
+  );
+  return memo;
+};

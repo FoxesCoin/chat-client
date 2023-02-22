@@ -1,12 +1,9 @@
-import styled, { css } from 'styled-components';
-
-import { useDebounceChangeEvent } from 'hooks/event';
-
-import { RElement } from 'typings/react';
-
 import { ReactComponent as Search } from 'assets/icons/search.svg';
+import { useDebounceChangeEvent } from 'hooks/event';
+import styled, { css } from 'styled-components';
 import { FONT_SIZES } from 'styles/font';
 import { cssSquare } from 'styles/theme';
+import { RElement } from 'typings/react';
 
 interface Props {
   onChange: (value: string) => void;
@@ -48,9 +45,7 @@ const Icon = styled(Search)`
   }
 `;
 
-export const SearchBar: RElement<Props> = (props) => {
-  const { className, onChange } = props;
-
+export const SearchBar = ({ className, onChange }: RElement<Props>) => {
   const handleChange = useDebounceChangeEvent(onChange);
 
   return (

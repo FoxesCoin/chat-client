@@ -1,16 +1,11 @@
-import styled, { css } from 'styled-components';
-
+import { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
 import { useClickEvent } from 'hooks/event';
-import { useAccordionApi, useAccordionState } from '../accordion.context';
-
+import styled, { css } from 'styled-components';
 import { COLORS } from 'styles/color';
 import { FONT_WEIGHT } from 'styles/font';
-
 import { cssSquare, cssVerticalCentralize } from 'styles/theme';
-
 import { RWrapper } from 'typings/react';
-
-import { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
+import { useAccordionApi, useAccordionState } from '../accordion.context';
 
 const Wrapper = styled.div<{ isOpen: boolean }>(
   ({ theme, isOpen }) => css`
@@ -44,9 +39,7 @@ const Icon = styled.div<{ isOpen: boolean }>(
   `
 );
 
-export const AccordionHeader: RWrapper = (props) => {
-  const { className, children } = props;
-
+export const AccordionHeader = ({ className, children }: RWrapper) => {
   const isOpen = useAccordionState();
   const setIsOpen = useAccordionApi();
 

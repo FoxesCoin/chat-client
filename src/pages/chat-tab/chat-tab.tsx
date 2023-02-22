@@ -1,12 +1,10 @@
+import { ContactModal } from 'components/contact-modal';
 import { SearchBar } from 'components/search-bar';
 import { SignButton } from 'components/sign-button';
-import { AccountItem, ChatGroup, GroupItem } from './components';
-
-import { useChatTabState } from './chat-tab.state';
-
-import { ContactModal } from 'components/contact-modal';
 import { Theme } from 'styles/theme';
+import { useChatTabState } from './chat-tab.state';
 import { ChatTabStyled as Styled } from './chat-tab.styled';
+import { AccountItem, ChatGroup, GroupItem } from './components';
 
 export const ChatTab = () => {
   const {

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-
 import { cssVerticalCentralize } from 'styles/theme';
-
 import { RWrapper } from 'typings/react';
 
 interface Props {
@@ -27,13 +25,9 @@ const Title = styled.div`
   }
 `;
 
-export const ContactsLetterGroup: RWrapper<Props> = (props) => {
-  const { letter, children } = props;
-
-  return (
-    <>
-      <Title>{letter}</Title>
-      <ul>{children}</ul>
-    </>
-  );
-};
+export const ContactsLetterGroup = ({ letter, children }: RWrapper<Props>) => (
+  <>
+    <Title>{letter}</Title>
+    <ul>{children}</ul>
+  </>
+);

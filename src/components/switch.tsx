@@ -1,11 +1,7 @@
-import styled, { css } from 'styled-components';
-
 import { useClickEvent } from 'hooks/event';
-
+import styled, { css } from 'styled-components';
 import { COLORS } from 'styles/color';
-
 import { cssRound, cssVerticalCentralize } from 'styles/theme';
-
 import { RElement } from 'typings/react';
 
 interface Props {
@@ -42,9 +38,7 @@ const Wrapper = styled.div<{ isActive: boolean }>(
   `
 );
 
-export const Switch: RElement<Props> = (props) => {
-  const { className, isActive, onClick } = props;
-
+export const Switch = ({ className, isActive, onClick }: RElement<Props>) => {
   const handleClick = useClickEvent(onClick);
 
   return (

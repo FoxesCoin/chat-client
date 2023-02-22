@@ -1,8 +1,7 @@
-import styled from 'styled-components';
-
 import { Picture } from 'components/picture';
-
+import styled from 'styled-components';
 import { cssAbsoluteCentralize, cssRound } from 'styles/theme';
+import { RElement } from 'typings/react';
 
 interface CheckmarkStyled {
   isActive: boolean;
@@ -36,16 +35,17 @@ const Checkmark = styled(Picture)<CheckmarkStyled>`
   display: ${(props) => (props.isActive ? 'block' : 'none')};
 `;
 
-export const ChooseThemeButton = (props: Props) => {
-  const { isActive, background, opacityBackground, onClick } = props;
-
-  return (
-    <Wrapper
-      background={background}
-      opacityBackground={opacityBackground}
-      onClick={onClick}
-    >
-      <Checkmark isActive={isActive} src="checkmark" />
-    </Wrapper>
-  );
-};
+export const ChooseThemeButton = ({
+  isActive,
+  background,
+  opacityBackground,
+  onClick,
+}: RElement<Props>) => (
+  <Wrapper
+    background={background}
+    opacityBackground={opacityBackground}
+    onClick={onClick}
+  >
+    <Checkmark isActive={isActive} src="checkmark" />
+  </Wrapper>
+);

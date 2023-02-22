@@ -1,10 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
-
-import { cssFlexCenter, cssSquare, Theme } from 'styles/theme';
-import { addAlphaToHEX } from 'utils/color';
-
 import { COLORS } from 'styles/color';
 import { MOBILE_MEDIA, PC_MEDIA } from 'styles/media';
+import { cssFlexCenter, cssSquare, Theme } from 'styles/theme';
+import { addAlphaToHEX } from 'utils/color';
 
 interface ModalStyled {
   animationDuration: number;

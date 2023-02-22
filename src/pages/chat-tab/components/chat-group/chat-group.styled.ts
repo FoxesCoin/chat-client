@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { FONT_SIZES, FONT_WEIGHT } from 'styles/font';
 import { Theme } from 'styles/theme';
+
 export const ChatGroupStyled = {
   TitleWrapper: styled(Theme.FlexLine)`
     padding: 0 1.5rem;

@@ -1,9 +1,6 @@
-import styled from 'styled-components';
-
 import { SearchBar } from 'components/search-bar';
-
+import styled from 'styled-components';
 import { PC_MEDIA } from 'styles/media';
-
 import { cssHideScrollbar } from 'styles/theme';
 
 export const ContactModalStyled = {

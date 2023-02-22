@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-
 import { COLORS } from 'styles/color';
 import { MOBILE_MEDIA, PC_MEDIA } from 'styles/media';
-
 import { cssSquare, Theme } from 'styles/theme';
 
 export const SideBarIcon = styled(Theme.FlexCenter)`

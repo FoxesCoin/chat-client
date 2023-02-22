@@ -1,17 +1,13 @@
 import { ChatItemWrapper, UnreadMessage } from 'pages/chat-tab/chat-tab.styled';
-
-import { useGroupItemState } from './group-item.state';
-
-import { RElement } from 'typings/react';
-
 import { Theme } from 'styles/theme';
+import { RElement } from 'typings/react';
+import { useGroupItemState } from './group-item.state';
 
 interface Props {
   id: number;
 }
 
-export const GroupItem: RElement<Props> = (props) => {
-  const { className, id } = props;
+export const GroupItem = ({ className, id }: RElement<Props>) => {
   const { name, unreadMessage, isActive } = useGroupItemState(id);
 
   return (

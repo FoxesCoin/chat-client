@@ -1,12 +1,7 @@
-import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-
+import { RWrapper } from 'typings/react';
 import { AccordionContext } from './accordion.context';
 import { AccordionContent, AccordionHeader } from './components';
-
-interface Props {
-  children: ReactNode;
-}
 
 const Wrapper = styled.div(
   ({ theme }) => css`
@@ -15,9 +10,9 @@ const Wrapper = styled.div(
   `
 );
 
-export const Accordion = ({ children }: Props) => (
+export const Accordion = ({ children, className }: RWrapper) => (
   <AccordionContext>
-    <Wrapper>{children}</Wrapper>
+    <Wrapper className={className}>{children}</Wrapper>
   </AccordionContext>
 );
 

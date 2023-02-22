@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
-
 import { COLORS } from 'styles/color';
 import { FONT_SIZES, FONT_WEIGHT } from 'styles/font';
-
 import { cssHideScrollbar, cssVerticalGap, Theme } from 'styles/theme';
 import { addAlphaToHEX } from 'utils/color';
 

@@ -1,6 +1,6 @@
-import { ReactNode, useMemo, useState } from 'react';
-
 import { useContextHandler } from 'hooks/context';
+import { useMemo, useState } from 'react';
+import { RWrapper } from 'typings/react';
 import { generateContext } from 'utils/react';
 
 const State = generateContext<boolean>('AccordionStateContext');
@@ -10,13 +10,7 @@ export const useAccordionState = () =>
   useContextHandler(State, 'AccordionState');
 export const useAccordionApi = () => useContextHandler(Api, 'AccordionApi');
 
-interface Props {
-  children: ReactNode;
-}
-
-export const AccordionContext = (props: Props) => {
-  const { children } = props;
-
+export const AccordionContext = ({ children }: RWrapper) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const state = useMemo(() => isOpen, [isOpen]);

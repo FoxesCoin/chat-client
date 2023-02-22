@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 import { UserThunk } from './user.thunk';
 
 interface UserRedux {

@@ -19,9 +19,14 @@ interface Props {
   className?: string;
 }
 
-export const Picture: RElement<Props> = (props) => {
-  const { className, src, height, size, width, alt = '' } = props;
-
+export const Picture = ({
+  className,
+  src,
+  height,
+  size,
+  width,
+  alt = '',
+}: RElement<Props>) => {
   if (!src) {
     return null;
   }

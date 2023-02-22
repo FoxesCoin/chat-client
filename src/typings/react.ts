@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface ReactElement {
   className?: string;
@@ -10,5 +10,5 @@ interface ReactWrapper {
   children: ReactNode;
 }
 
-export type RElement<T = {}> = FC<T & ReactElement>;
-export type RWrapper<T = {}> = FC<T & ReactWrapper>;
+export type RElement<T = {}> = T & ReactElement;
+export type RWrapper<T = {}> = T & ReactWrapper;

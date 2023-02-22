@@ -1,13 +1,9 @@
-import styled from 'styled-components';
-
-import { COLORS } from 'styles/color';
-
-import { cssSquare } from 'styles/theme';
-import { addAlphaToHEX } from 'utils/color';
-
-import { RElement } from 'typings/react';
-
 import { ReactComponent as Add } from 'assets/icons/add.svg';
+import styled from 'styled-components';
+import { COLORS } from 'styles/color';
+import { cssSquare } from 'styles/theme';
+import { RElement } from 'typings/react';
+import { addAlphaToHEX } from 'utils/color';
 
 interface Props {
   onClick: () => void;
@@ -36,12 +32,8 @@ const Button = styled.button`
   }
 `;
 
-export const SignButton: RElement<Props> = (props) => {
-  const { className, onClick } = props;
-
-  return (
-    <Button className={className} onClick={onClick}>
-      <Add />
-    </Button>
-  );
-};
+export const SignButton = ({ className, onClick }: RElement<Props>) => (
+  <Button className={className} onClick={onClick}>
+    <Add />
+  </Button>
+);

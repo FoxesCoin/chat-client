@@ -1,11 +1,8 @@
-import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-
 import { COLORS } from 'styles/color';
 import { PC_MEDIA } from 'styles/media';
-
 import { cssVerticalCentralize } from 'styles/theme';
-
+import { RWrapper } from 'typings/react';
 import { SideBarIcon } from '../side-bar.styled';
 
 interface Styled {
@@ -14,12 +11,6 @@ interface Styled {
 
 export interface SideBarTemplate extends Styled {
   onClick: () => void;
-}
-
-interface Props extends SideBarTemplate {
-  children: ReactNode;
-
-  className?: string;
 }
 
 const Wrapper = styled(SideBarIcon)<Styled>(
@@ -47,12 +38,13 @@ const Wrapper = styled(SideBarIcon)<Styled>(
   `
 );
 
-export const SideBarItem = (props: Props) => {
-  const { isActive, children, className, onClick } = props;
-
-  return (
-    <Wrapper isActive={isActive} className={className} onClick={onClick}>
-      {children}
-    </Wrapper>
-  );
-};
+export const SideBarItem = ({
+  isActive,
+  children,
+  className,
+  onClick,
+}: RWrapper<SideBarTemplate>) => (
+  <Wrapper isActive={isActive} className={className} onClick={onClick}>
+    {children}
+  </Wrapper>
+);

@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
-
-import { STATUS_COLOR } from 'utils/user';
-
 import { cssRound } from 'styles/theme';
+import { STATUS_COLOR } from 'utils/user';
 
 interface LogoStyling {
   logo: string | null;

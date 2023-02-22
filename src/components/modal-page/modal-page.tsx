@@ -1,16 +1,13 @@
-import { createPortal } from 'react-dom';
-
-import { ModalPageStyled as Styled } from './modal-page.styled';
-
-import { RWrapper } from 'typings/react';
-
 import { ReactComponent as Close } from 'assets/icons/close.svg';
 import { Button } from 'components/button';
+import { createPortal } from 'react-dom';
+import { RWrapper } from 'typings/react';
 import {
   ModalPageState,
   MODAL_ANIMATION_DURATION,
   useModalPageState,
 } from './modal-page.state';
+import { ModalPageStyled as Styled } from './modal-page.styled';
 
 interface Props extends ModalPageState {
   title: string;
@@ -19,17 +16,15 @@ interface Props extends ModalPageState {
 
 const modalRoot = document.getElementById('modal') as HTMLElement;
 
-export const ModalPage: RWrapper<Props> = (props) => {
-  const {
-    className,
-    children,
-    title,
-    isOpen,
-    isDisabledConfirm,
-    onClose,
-    onConfirm,
-  } = props;
-
+export const ModalPage = ({
+  className,
+  children,
+  title,
+  isOpen,
+  isDisabledConfirm,
+  onClose,
+  onConfirm,
+}: RWrapper<Props>) => {
   const { handleClose, handleConfirm, isHide } = useModalPageState({
     isOpen,
     onClose,

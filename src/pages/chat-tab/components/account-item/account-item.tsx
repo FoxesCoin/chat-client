@@ -1,16 +1,15 @@
 import { ChatItemWrapper, UnreadMessage } from 'pages/chat-tab/chat-tab.styled';
+import { memo } from 'react';
 import { Theme } from 'styles/theme';
 import { RElement } from 'typings/react';
 import { useAccountItemState } from './account-item.state';
-
 import { AccountItemStyled as Styled } from './account-item.styled';
 
 interface Props {
   id: number;
 }
 
-export const AccountItem: RElement<Props> = (props) => {
-  const { className, id } = props;
+export const AccountItem = memo(({ className, id }: RElement<Props>) => {
   const { logo, name, status, unreadMessage, isActive } =
     useAccountItemState(id);
 
@@ -33,4 +32,5 @@ export const AccountItem: RElement<Props> = (props) => {
       )}
     </ChatItemWrapper>
   );
-};
+});
+AccountItem.displayName = 'AccountItem';

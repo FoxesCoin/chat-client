@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-
 import { MOCK_USERS } from 'constants/user.mock';
+import { useEffect, useState } from 'react';
 
 type AlphabetUsers = Record<string, User[]>;
 

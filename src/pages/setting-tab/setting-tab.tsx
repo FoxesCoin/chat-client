@@ -1,15 +1,11 @@
-import styled from 'styled-components';
-
 import { Accordion } from 'components/accordion';
-import { ChooseThemeButton } from './components';
-
-import { getObjectEntries } from 'utils/object';
-import { useSettingTabState } from './setting-tab.state';
-
-import { PRIMARY_COLOR_THEME } from 'constants/theme';
-
 import { Switch } from 'components/switch';
+import { PRIMARY_COLOR_THEME } from 'constants/theme';
+import styled from 'styled-components';
 import { cssVerticalGap, Theme } from 'styles/theme';
+import { getObjectEntries } from 'utils/object';
+import { ChooseThemeButton } from './components';
+import { useSettingTabState } from './setting-tab.state';
 
 const Content = styled(Accordion.Content)`
   ${cssVerticalGap('1.5rem')}
