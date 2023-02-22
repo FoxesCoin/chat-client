@@ -1,6 +1,6 @@
 import { SideBarItem, SideBarTemplate } from './components';
 
-import { useActionDispatch, useAppSelector } from 'hooks/redux';
+import { Selectors, useActionDispatch, useAppSelector } from 'hooks/redux';
 import { AppActions } from 'utils/app';
 
 import { SideBarStyled as Styled } from './side-bar.styled';
@@ -13,7 +13,7 @@ import { ReactComponent as ProfileIcon } from 'assets/icons/side-bar/profile.svg
 import { ReactComponent as Setting } from 'assets/icons/side-bar/setting.svg';
 
 export const SideBar = () => {
-  const page = useAppSelector((redux) => redux.app.page);
+  const page = useAppSelector(Selectors.page);
   const selectPage = useActionDispatch(AppActions.selectPage);
 
   const createTemplateItem = (template: ChatPage): SideBarTemplate => ({

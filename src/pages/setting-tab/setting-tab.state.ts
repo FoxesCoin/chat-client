@@ -1,10 +1,8 @@
-import { useActionDispatch, useAppSelector } from 'hooks/redux';
+import { Selectors, useActionDispatch, useAppSelector } from 'hooks/redux';
 import { UserThunk } from 'utils/user';
 
 export const useSettingTabState = () => {
-  const { primaryColor, theme } = useAppSelector(
-    (redux) => redux.user.user.theme
-  );
+  const { primaryColor, theme } = useAppSelector(Selectors.theme);
   const updateUser = useActionDispatch(UserThunk.updateTheme);
 
   const switchTheme = () =>

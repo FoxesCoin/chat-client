@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 
-import { useAppSelector } from 'hooks/redux';
+import { Selectors, useAppSelector } from 'hooks/redux';
 
 import { PRIMARY_COLOR_THEME, PROJECT_THEME } from 'constants/theme';
 
@@ -19,9 +19,7 @@ const getTheme = (
 
 export const ThemeContainer = (props: Props) => {
   const { children } = props;
-  const { primaryColor, theme } = useAppSelector(
-    (redux) => redux.user.user.theme
-  );
+  const { primaryColor, theme } = useAppSelector(Selectors.theme);
   const [projectTheme, setProjectTheme] = useState<DefaultTheme>(
     getTheme(primaryColor, theme)
   );

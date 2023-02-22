@@ -1,3 +1,4 @@
+import { createSelector } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import type { AppDispatch, RootState } from 'utils/store';
@@ -11,4 +12,15 @@ export const useActionDispatch = <T extends Func>(action: T) => {
   const dispatch = useAppDispatch();
 
   return (...args: Parameters<T>): ReturnType<T> => dispatch(action(...args));
+};
+
+export const Selectors = {
+  page: createSelector(
+    (state: RootState) => state.app,
+    (data) => data.page
+  ),
+  theme: createSelector(
+    (redux: RootState) => redux.user.user.theme,
+    (data) => data
+  ),
 };

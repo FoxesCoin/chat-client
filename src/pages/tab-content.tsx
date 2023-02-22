@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ChatTab } from './chat-tab';
 import { SettingTab } from './setting-tab';
 
-import { useAppSelector } from 'hooks/redux';
+import { Selectors, useAppSelector } from 'hooks/redux';
 
 import { PC_MEDIA } from 'styles/media';
 
@@ -29,7 +29,7 @@ const selectPage = (page: ChatPage): ReactElement | null => {
 };
 
 export const TabContent = () => {
-  const page = useAppSelector((redux) => redux.app.page);
+  const page = useAppSelector(Selectors.page);
 
   return <Wrapper>{selectPage(page)}</Wrapper>;
 };
